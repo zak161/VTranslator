@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>قسم التحرير</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app">
+    <header>
+      <h1>قسم التحرير</h1>
+      <p>ترجمة الفيديوهات</p>
+    </header>
+
+    <main>
+      <section class="controls">
+
+        <label class="upload-box" for="videoInput">
+          <span class="upload-title">اضغط هنا لرفع الفيديو</span>
+          <span class="upload-desc">اختر ملف فيديو من جهازك</span>
+        </label>
+
+        <input type="file" id="videoInput" accept="video/*" />
+
+        <div class="select-row">
+          <label>
+            لغة الكلام في الفيديو
+            <select id="sourceLanguage">
+              <option value="auto">اكتشاف تلقائي</option>
+              <option value="arabic">العربية</option>
+              <option value="english">الإنجليزية</option>
+              <option value="french">الفرنسية</option>
+              <option value="spanish">الإسبانية</option>
+              <option value="chinese">الصينية</option>
+            </select>
+          </label>
+
+          <label>
+            لغة الترجمة
+            <select id="targetLanguage">
+              <option value="english">الإنجليزية</option>
+              <option value="arabic">العربية</option>
+              <option value="french">الفرنسية</option>
+              <option value="spanish">الإسبانية</option>
+              <option value="chinese">الصينية</option>
+            </select>
+          </label>
+        </div>
+
+        <button id="generateBtn" disabled>ترجمة الفيديو</button>
+      </section>
+
+      <section class="status-section">
+        <div id="status">ارفع فيديو للبدء.</div>
+        <div class="progress">
+          <div id="progressBar"></div>
+        </div>
+      </section>
+
+      <section class="video-section">
+        <div class="video-wrapper">
+          <video id="videoPlayer" controls></video>
+          <div id="subtitleOverlay"></div>
+        </div>
+      </section>
+
+      <section class="actions">
+        <button id="downloadBtn" disabled>تحميل الفيديو</button>
+      </section>
+
+      <canvas id="canvas"></canvas>
+    </main>
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
